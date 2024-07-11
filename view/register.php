@@ -30,12 +30,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Đăng ký</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="container">
-        <h2>Đăng ký</h2>
+        <h2 class='text-light fw-bolder'>Đăng ký</h2>
         <?php
         if (isset($error)) {
             echo "<div class='error'>$error</div>";
@@ -45,16 +46,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         ?>
         <form method="post" action="register.php">
-            <label for="username">Tên đăng nhập:</label>
-            <input type="text" id="username" name="username" required><br><br>
-            <label for="phone">Số điện thoại:</label>
-            <input type="text" id="phone" name="phone" required><br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="password">Mật khẩu:</label>
-            <input type="password" id="password" name="password" required><br><br>
-            <input type="submit" value="Đăng ký">
+            <div class=" row mb-3">
+                <label for="inputEmail3" class="col-sm-2 col-form-label fw-bold text-info">Tên đăng nhập:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputPassword3" class="col-sm-2 col-form-label text-info fw-bold">Số điện thoại:</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="phone" name="phone" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputPassword3" class="col-sm-2 col-form-label text-info fw-bold">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputPassword3" class="col-sm-2 col-form-label text-info fw-bold">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">register</button>
+            <a href="login.php" class="btn btn-primary"> login</a>
         </form>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
     </div>
 </body>
 
